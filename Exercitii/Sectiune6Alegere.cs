@@ -94,24 +94,44 @@ static partial class Program
         Console.WriteLine(c.Min + " " + c.Max + ", sortat: " + string.Join(", ", c));
     }
 
-    static void SituatiaNote()
+    static void SituatiaNote() //List
     {
         List<int> l = new List<int> { 9, 6, 10, 7 };
         l[1] = 8;
         l.RemoveAt(3);
-        //l.Sort();
+        l.Sort();
         Console.WriteLine(string.Join(", ", l));
     }
 
-    static void SituatiaScoruri()
+    static void SituatiaScoruri() //SortedDictionary
     {
+        SortedDictionary<string, int> d = new SortedDictionary<string, int>();
+        d.Add("Zoe", 5);
+        d.Add("Ana", 9);
+        d.Add("Ion", 7);
+        Console.WriteLine(string.Join(", ", d));
     }
 
-    static void SituatiaMetrou()
+    static void SituatiaMetrou() //LinkedList
     {
+        LinkedList<string> l = new LinkedList<string>();
+        l.AddLast("Ion");
+        l.AddLast("Maria");
+        l.AddFirst("Ana");
+        l.AddLast("Dan");
+        l.RemoveLast();
+        Console.WriteLine(string.Join(", ", l));
     }
 
-    static void SituatiaClasament()
+    static void SituatiaClasament() //SortedList
     {
+        SortedList<string, int> d = new SortedList<string, int>();
+        d.Add("Zoe", 5);
+        d.Add("Ana", 9);
+        d.Add("Ion", 7);
+        foreach (KeyValuePair<string, int> kv in d) 
+        {
+            Console.WriteLine(kv.Key + " = " + kv.Value);
+        }
     }
 }

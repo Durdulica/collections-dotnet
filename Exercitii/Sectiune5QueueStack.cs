@@ -21,6 +21,10 @@ static partial class Program
         q.Enqueue("Ana");
         q.Enqueue("Ion");
         q.Enqueue("Maria");
+
+        Console.WriteLine(q.Dequeue());
+        Console.WriteLine(q.Peek());
+        Console.WriteLine(q.Count);
     }
 
     static void StivaPopPeekSiParcurgere()
@@ -29,6 +33,10 @@ static partial class Program
         s.Push("Ana");
         s.Push("Ion");
         s.Push("Maria");
+
+        Console.WriteLine(s.Pop());
+        Console.WriteLine(s.Peek());
+        Console.WriteLine(string.Join(", ", s));
     }
 
     static void ScoateToataCoada()
@@ -37,9 +45,33 @@ static partial class Program
         q.Enqueue("Ana");
         q.Enqueue("Ion");
         q.Enqueue("Maria");
+
+        while(q.Count > 0)
+        {
+            Console.WriteLine(q.Dequeue());
+        }
     }
 
     static void ScoateDinGol()
     {
+        Queue<string> q = new Queue<string>();
+        try
+        {
+            q.Dequeue();
+        }
+        catch (Exception ex) 
+        {
+            Console.WriteLine(ex.GetType().Name);
+        }
+
+        Stack<string> s = new Stack<string>();
+        try
+        {
+            s.Pop();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.GetType().Name);
+        }
     }
 }
